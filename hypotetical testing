@@ -1,0 +1,7 @@
+install.packages("readxl")
+library(readxl)
+data <- read_excel("C:\\Users\\abdur\\Documents\\CLG\\COST\
+\employee_data.xlsx")
+# One-Sample t-Test if mean of 'Salary' = 70000
+test_one_sample <- t.test(data$Salary, mu = 70000)
+print(test_one_sample)
