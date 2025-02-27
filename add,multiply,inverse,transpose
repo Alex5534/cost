@@ -1,0 +1,29 @@
+# Intialize Matrix 3x3
+matrix_1 <- matrix(c(1,3,2,5,7,8,4,6,9), nrow = 3, ncol = 3)
+matrix_2 <- matrix(c(19, 17, 12, 11, 16, 25, 22, 10, 9), nrow = 3, ncol = 3)
+# Print matrix A & B
+cat("Matrix A:\n")
+print(matrix_1)
+cat("\n Matrix B:\n")
+print(matrix_2)
+# Matrix Addition
+matrix_1_plus_matrix_2 <- matrix_1 + matrix_2
+cat("\n Matrix_1 + Matrix 2: \n")
+print(matrix_1_plus_matrix_2)
+# Matrix Inverse
+det_1 <- det(matrix_1)
+if(det_1 != 0){
+ a_inv = solve(matrix_1)
+ cat("\n Inverse of Matrix 1:\n")
+ print(a_inv)
+}else{
+ print("Matrix 1 is not invertible (determinant is 0).\n")
+}
+det_2 <- det(matrix_2)
+if(det_2 != 0){
+ b_inv = solve(matrix_2)
+ cat("\n Inverse of Matrix 2:\n")
+ print(det_2)
+}else{
+ print("Matrix 1 is not invertible (determinant is 0).\n")
+}
