@@ -5,3 +5,8 @@ data <- read_excel("C:\\Users\\abdur\\Documents\\CLG\\COST\
 # One-Sample t-Test if mean of 'Salary' = 70000
 test_one_sample <- t.test(data$Salary, mu = 70000)
 print(test_one_sample)
+# Two-Sample t-Test: Compare means between two groups
+data$Group <- ifelse(data$Salary <= 70000, "Low", "High")
+data$Group <- factor(data$Group) # Ensure the Group has Exactly two levels
+test_two_sample <- t.test(Salary~Group,data = data)
+print(test_two_sample)
