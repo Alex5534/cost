@@ -1,0 +1,9 @@
+install.packages("readxl")
+library(readxl)
+data <- read_excel("C:\\Users\\abdur\\Documents\\CLG\\COST\
+\employee_data.xlsx")
+numerical_data = data$Salary
+sd_column <- sd(numerical_data)
+var_column <- var(numerical_data)
+cat("Standard Deviation:- ", sd_column)
+cat("\n Variance of the Column:- ", var_column)
