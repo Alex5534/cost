@@ -1,0 +1,15 @@
+install.packages("readxl")
+install.packages("e1071")
+install.packages("ggplot2")
+library(readxl)
+library(e1071)
+library(ggplot2)
+data <- read_excel("C:\\Users\\abdur\\Documents\\CLG\\COST\
+\employee_data.xlsx")
+numerical_data <- data$Salary
+# Calculate Skewness
+skew_value <- skewness(numerical_data)
+cat("Skewness of the Column: ",skew_value)
+ggplot(data,aes(x = numerical_data)) + geom_histogram(binwidth = 1, color =
+"black", fill = "lightblue") + labs(title = paste("Histogram of Salary \n
+Skewness",round(skew_value,2)),x = "Values", y = "Frequency")
