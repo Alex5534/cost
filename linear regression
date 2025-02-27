@@ -1,0 +1,16 @@
+library(readxl)
+library(ggplot2)
+data <- read_excel("C:\\Users\\abdur\\Documents\\CLG\
+\COST\employee_data.xlsx")
+# Extract the relevant columns eg('Salary' and 'Experience')
+salary_data = data$Salary
+experience_data <- data$experience
+# Fit the Linear Regression Model
+model <- lm(salary ~ experience, data = data)
+# Inspect the Model Summary
+summary(model)
+# Plot the data and the Regression Line
+ggplot(data,aes(x = experience, y = Salary)) + geom_point(color = "blue") +
+geom_smooth(method = "lm", se = FALSE, color = "red") +
+ labs(title = "Linear Regression: Salary vs Experience", x = "Experience (years)", y =
+"Salary") + theme_minimal()
